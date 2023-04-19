@@ -1,4 +1,6 @@
 import {API_KEY} from './credentials.js'
+require('dotenv').config()
+console.log(process.env.API_KEY)
 
 const inputBar = document.querySelector(".input-bar");
 const buttonSubmit = document.querySelector(".btn");
@@ -7,6 +9,7 @@ const userLocation = document.querySelector(".user-location");
 const userTimezone = document.querySelector(".user-timezone");
 const userServiceName = document.querySelector(".user-service-name"); 
 const userServiceValue = document.querySelector(".user-service");
+const apiKey = process.env.API_KEY;
 
 class IPAddressTracker{
     #map;
@@ -24,7 +27,7 @@ class IPAddressTracker{
         const ip = inputBar.value;
         inputBar.value = "";
  
-        const request = fetch(`https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${ip}`);
+        const request = fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`);
         
         request.then(reponse => reponse.json()).then(
             function(data){                
