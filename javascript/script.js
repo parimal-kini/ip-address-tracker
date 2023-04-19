@@ -1,6 +1,5 @@
-//import {API_KEY} from './credentials.js'
-require('dotenv').config()
-console.log(process.env.API_KEY)
+import dotenv from 'dotenv';
+dotenv.config();
 
 const inputBar = document.querySelector(".input-bar");
 const buttonSubmit = document.querySelector(".btn");
