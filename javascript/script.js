@@ -1,4 +1,4 @@
-import {API_KEY} from './credentials.js'
+//import {API_KEY} from './credentials.js'
 require('dotenv').config()
 console.log(process.env.API_KEY)
 
